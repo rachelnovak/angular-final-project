@@ -8,11 +8,12 @@ import { UserService } from '../../shared/services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
   localStorage=localStorage;
   JSON=JSON;
-  user: User;
-  constructor(private userService: UserService) {
-    this.user = this.userService.user;
+
+  constructor() {
+
   }
 
   ngOnInit() {
