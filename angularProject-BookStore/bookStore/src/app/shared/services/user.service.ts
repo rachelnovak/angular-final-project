@@ -8,7 +8,10 @@ import { User } from '../models/User.model';
 export class UserService {
     user: User;
     guest: User;
+    userList: User[];
+    basicURL = "http://localhost:3500/api";
     userSubject = new Subject();
+
     constructor(private httpClient: HttpClient) {
         this.guest = new User('', '', 'guest', '', 'src="favicon.ico"');
         if (!localStorage.getItem('user')) {
@@ -17,8 +20,7 @@ export class UserService {
         }
         this.user = JSON.parse(localStorage.getItem('user'));
     }
-    basicURL = "http://localhost:3500/api";
-    userList: User[];
+   
     getAllUsers(setUserList: (res) => void): void {
         let url: string = this.basicURL + "/getList?fileName=user";
         this.httpClient.get<any[]>(url)
@@ -27,6 +29,7 @@ export class UserService {
                 setUserList(this.userList);
             });
     }
+
     register(user: User): void {
         let url: string = this.basicURL + "/register";
         this.httpClient.post<User>(url, user)
@@ -42,10 +45,12 @@ export class UserService {
                 })
 
     }
+
     login(userName: string, password: string): Observable<any> {
         let url: string = this.basicURL + "/login";
         return this.httpClient.post<User>(url, { userName: userName, password: password });
     }
+    
     logOut() {
         localStorage.setItem('user', JSON.stringify(this.guest));
         this.user = JSON.parse(localStorage.getItem('user'));

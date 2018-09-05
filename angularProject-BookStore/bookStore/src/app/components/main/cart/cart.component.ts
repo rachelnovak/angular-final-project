@@ -8,7 +8,8 @@ import { ProductService } from '../../../shared/services/product.service';
 })
 export class CartComponent implements OnInit {
 
-   myProductsCartList: any[];
+  myProductsCartList: any[];
+
   constructor(private productService: ProductService) {
     this.myProductsCartList = [];
   }
@@ -20,6 +21,7 @@ export class CartComponent implements OnInit {
     this.getProductsCartList();
 
   }
+
   getProductsCartList() {
     this.myProductsCartList = this.productService.getProductsCartList();
   }

@@ -9,22 +9,26 @@ import { ProductService } from '../../../shared/services/product.service';
 })
 export class ProductPreviewComponent implements OnInit {
   @Input()
-  product:any;
-  
+  product: any;
+
   @Input()
-  isFromCart:boolean;
-  constructor(private router: Router,private productService:ProductService) {
-    
+  isFromCart: boolean;
+
+  constructor(private router: Router, private productService: ProductService) {
+
   }
+
   ngOnInit() {
     console.log(this.product);
   }
+
   viewDetails() {
-    let stringProduct=JSON.stringify(this.product);
-    this.router.navigate(['/bookStore/products/productDetails',this.product["volumeInfo"].title]);
+    let stringProduct = JSON.stringify(this.product);
+    this.router.navigate(['/bookStore/products/productDetails', this.product["volumeInfo"].title]);
   }
+
   removeBook() {
-   
+
     this.productService.removeProduct(this.product);
   }
 

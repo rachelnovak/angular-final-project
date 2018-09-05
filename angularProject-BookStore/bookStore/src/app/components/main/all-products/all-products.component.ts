@@ -10,16 +10,20 @@ import { ProductService } from '../../../shared/services/product.service';
 export class AllProductsComponent implements OnInit {
 
   searchForm: FormGroup;
-  productsList:any[]=[]
+  productsList:any[]=[];
+
   constructor(private fb: FormBuilder, private productServise: ProductService) {
     this.searchForm = this.fb.group({
       search: ['']
     });
   }
+
   get search() {
     return this.searchForm.get("search");
   }
+  
   onSubmit() {
+
   }
   searchProducts() {
     console.log(this.searchForm.get("search").value);
@@ -31,6 +35,7 @@ export class AllProductsComponent implements OnInit {
       }
     )
   }
+  
   ngOnInit() {
     this.searchProducts();
   }
