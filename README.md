@@ -26,4 +26,4 @@ npm start
 
 ##### See live demo:
 
-https://seldat-tamat-angular.herokuup.com/bookStore
+https://seldat-tamar-angular.herokuup.com/bookStore
