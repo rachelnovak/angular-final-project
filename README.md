@@ -19,7 +19,7 @@ ng serve --open
 ## Run this app in dev mode- server side:
 ```bash
 clone 'https://github.com/rachelnovak/angular-final-project'
-cd bookStore-frontend
+cd bookStore-backend
 npm i
 npm start
 ```
