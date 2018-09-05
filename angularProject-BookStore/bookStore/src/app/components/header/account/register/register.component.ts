@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
-import { User } from '../../shared/models/User.model';
-import { UserService } from '../../shared/services/user.service';
+import { User } from '../../../../shared/models/User.model';
+import { UserService } from '../../../../import';
 import { Router, ActivatedRoute } from '@angular/router';
-// import {ValidateId}from ''
-// <!-- public firstfirstName: string,
-// public lasstfirstName: string,
-// public userfirstName: string,
-// public password: string,
-// public img:string -->
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
