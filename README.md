@@ -25,5 +25,4 @@ npm start
 ```
 
 ##### See live demo:
-
-https://seldat-tamar-angular.herokuup.com/bookStore
+https://glacial-plains-94649.herokuapp.com/bookStore
