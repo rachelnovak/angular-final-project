@@ -3,14 +3,14 @@
 
         <h3>{{product["volumeInfo"].title}}</h3>
         <h4>{{product["volumeInfo"].subtitle}}</h4>
-        <img src="{{product['volumeInfo'].imageLinks}}">
+        <!-- <img src="{{product['volumeInfo'].imageLinks}}"> -->
     </div>
     <button (click)="viewDetails()">View Details</button>
 </div>
 
 <div *ngIf="isFromCart">
     <div class="preview" *ngIf="product">
-        <img src="{{product['volumeInfo'].imageLinks}}" class="myImg">
+        <!-- <img src="{{product['volumeInfo'].imageLinks}}" class="myImg"> -->
         <h3>{{product.title}}</h3>
         <h4>{{product.subtitle}}</h4>
     </div>
