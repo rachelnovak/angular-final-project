@@ -9,7 +9,7 @@ export class UserService {
     user: User;
     guest: User;
     userList: User[];
-    basicURL = "http://localhost:3500/api";
+    basicURL = "https://glacial-plains-94649.herokuapp.com/api";
     userSubject = new Subject();
 
     constructor(private httpClient: HttpClient) {
@@ -50,7 +50,7 @@ export class UserService {
         let url: string = this.basicURL + "/login";
         return this.httpClient.post<User>(url, { userName: userName, password: password });
     }
-    
+
     logOut() {
         localStorage.setItem('user', JSON.stringify(this.guest));
         this.user = JSON.parse(localStorage.getItem('user'));

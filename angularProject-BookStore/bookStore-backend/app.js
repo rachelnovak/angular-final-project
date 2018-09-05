@@ -1,14 +1,14 @@
 const path = require('path');
 const fs = require('fs');
-
 const express = require('express');
-const app = express();
-
 const bodyParser = require("body-parser");
+const app = express();
+const basePath = path.join(__dirname + "/dist");
+const cors = require('cors');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const cors = require('cors');
 var corsOptions = {
     origin: 'http://localhost:4200',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
